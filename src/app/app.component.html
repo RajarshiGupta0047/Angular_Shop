@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      
+      <h3>TodoAssignment</h3>
+      
+      <button
+      class='btn btn-primary'
+      (click)="do()"
+      >Display Details</button>
+      <p *ngIf="status" 
+      >Secret Password:2444666668888888</p>
+      <div
+      *ngFor="let i of list;let in=index"
+     [ngStyle]="{backgroundColor:in>=5?'blue':'transparent'}"
+     [ngClass]="{ok:in>=5}">{{i}}</div>
+     
+     
+      <ng-template #no>
+        <p *ngFor="let i of list"
+     [ngStyle]="{backgroundColor:getColor()}"
+     [ngClass]="{ok:i>=5}">{{i}}</p>
+     
+      </ng-template>
+    </div>
+  </div>
+</div>
